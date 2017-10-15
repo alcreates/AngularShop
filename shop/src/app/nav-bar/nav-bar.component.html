@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+
+  <mat-menu #appMenu="matMenu">
+      <button mat-menu-item routerLink="/"> home </button>
+      <button mat-menu-item routerLink="/shoppingcart"> Shopping Cart </button>
+  </mat-menu>
+  
+  <button mat-icon-button [matMenuTriggerFor]="appMenu">
+     <mat-icon>Menu</mat-icon>
+  </button>
+
+</mat-toolbar>
