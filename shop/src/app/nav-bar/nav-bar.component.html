@@ -2,16 +2,22 @@
 
   <mat-menu #appMenu="matMenu">
       <button mat-menu-item routerLink="/my/orders"> My Orders </button>
-      <button mat-menu-item routerLink="/shoppingcart"> Shopping Cart </button>
+      <ng-container *ngIf="appUser">
+            <button *ngIf="appUser.isAdmin" mat-menu-item routerLink="/admin/orders"> Manage Orders </button>
+            <button *ngIf="appUser.isAdmin" mat-menu-item routerLink="/admin/products"> Manage Products </button>
+      </ng-container>
+     
       <button mat-menu-item routerLink="/" (click)="logout()"> Log Out </button>
       
   </mat-menu>
   <button mat-button routerLink="/" >Home</button>
+  <button mat-button routerLink="/shoppingcart" >Shopping Cart</button>
+  
   <ng-template #otherUser>
       <button mat-button routerLink="/login">Login</button>     
   </ng-template>
-  <button  *ngIf="auth.user$ | async as user; else otherUser" mat-icon-button [matMenuTriggerFor]="appMenu">
-     <mat-icon>{{ user.displayName }}</mat-icon>
+  <button  *ngIf="appUser; else otherUser" mat-icon-button [matMenuTriggerFor]="appMenu">
+     <mat-icon>{{ appUser.name }}</mat-icon>
   </button>
 
 </mat-toolbar>
