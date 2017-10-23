@@ -1,3 +1,5 @@
+import { ProductService } from './product.service';
+import { CategoryService } from './category.service';
 import { AdminAuthGuardService } from './admin-auth-guard.service';
 import { UserService } from './user.service';
 import { AuthGuardService } from './auth-guard.service';
@@ -9,10 +11,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule, MatSelectModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
+import {MatCardModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -25,6 +32,9 @@ import { MyordersComponent } from './myorders/myorders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
+import { ProductFormComponent } from './admin/product-form/product-form.component';
+import { MatTableModule } from '@angular/material';
+
 
 
 @NgModule({
@@ -39,7 +49,8 @@ import { LoginComponent } from './login/login.component';
     MyordersComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
-    LoginComponent
+    LoginComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +62,12 @@ import { LoginComponent } from './login/login.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    CustomFormsModule,
+    MatCardModule,
+    MatTableModule,
     RouterModule.forRoot(
       [
         {path: '', component: HomeComponent},
@@ -59,9 +76,11 @@ import { LoginComponent } from './login/login.component';
         {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuardService]},
         {path: 'ordersuccess', component: OrderSuccessComponent , canActivate: [AuthGuardService]},
         {path: 'login', component: LoginComponent},
-        {path: 'admin/products', component: AdminProductsComponent , canActivate: [AuthGuardService, AdminAuthGuardService]},
         {path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuardService, AdminAuthGuardService]},
-        {path: 'my/orders', component: MyordersComponent, canActivate: [AuthGuardService]}
+        {path: 'my/orders', component: MyordersComponent, canActivate: [AuthGuardService]},
+        {path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService]},
+        {path: 'admin/products/:id', component: ProductFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService]},
+        {path: 'admin/products', component: AdminProductsComponent , canActivate: [AuthGuardService, AdminAuthGuardService]}
       ]
     )
   ],
@@ -69,7 +88,9 @@ import { LoginComponent } from './login/login.component';
     AuthService,
     AuthGuardService,
     UserService,
-    AdminAuthGuardService
+    AdminAuthGuardService,
+    CategoryService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })

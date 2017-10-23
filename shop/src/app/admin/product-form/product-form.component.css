@@ -1,0 +1,15 @@
+.productForm-container {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .productForm-container > * {
+    width: 400px;
+    align-self: auto;
+  }
+
+  .productPage {
+      display: flex;
+      justify-content: center;
+  }
