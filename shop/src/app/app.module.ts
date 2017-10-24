@@ -20,6 +20,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
 import {MatCardModule} from '@angular/material';
+import { DataTableModule } from 'angular-4-data-table';
+import {MatListModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -66,11 +68,13 @@ import { MatTableModule } from '@angular/material';
     FormsModule,
     MatInputModule,
     CustomFormsModule,
+    DataTableModule,
     MatCardModule,
     MatTableModule,
+    MatListModule,
     RouterModule.forRoot(
       [
-        {path: '', component: HomeComponent},
+        {path: '', component: ProductsComponent},
         {path: 'products', component: ProductsComponent },
         {path: 'shoppingcart', component: ShoppingCartComponent},
         {path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuardService]},
