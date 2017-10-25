@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './shopping-cart.service';
 import { ProductService } from './product.service';
 import { CategoryService } from './category.service';
 import { AdminAuthGuardService } from './admin-auth-guard.service';
@@ -22,6 +23,7 @@ import { CustomFormsModule } from 'ng2-validation';
 import {MatCardModule} from '@angular/material';
 import { DataTableModule } from 'angular-4-data-table';
 import {MatListModule} from '@angular/material';
+import {MatChipsModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -36,6 +38,8 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { LoginComponent } from './login/login.component';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { MatTableModule } from '@angular/material';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 
 
@@ -52,7 +56,9 @@ import { MatTableModule } from '@angular/material';
     AdminProductsComponent,
     AdminOrdersComponent,
     LoginComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductFilterComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +78,7 @@ import { MatTableModule } from '@angular/material';
     MatCardModule,
     MatTableModule,
     MatListModule,
+    MatChipsModule,
     RouterModule.forRoot(
       [
         {path: '', component: ProductsComponent},
@@ -94,7 +101,8 @@ import { MatTableModule } from '@angular/material';
     UserService,
     AdminAuthGuardService,
     CategoryService,
-    ProductService
+    ProductService,
+    ShoppingCartService
   ],
   bootstrap: [AppComponent]
 })
