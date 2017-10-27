@@ -44,6 +44,9 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
+import { AdminOrderDetailComponent } from './admin-order-detail/admin-order-detail.component';
+import { OrderDetailsDisplayComponent } from './order-details-display/order-details-display.component';
 
 
 
@@ -65,7 +68,10 @@ import { ShippingFormComponent } from './shipping-form/shipping-form.component';
     ProductCardComponent,
     ProductQuantityComponent,
     ShoppingCartSummaryComponent,
-    ShippingFormComponent
+    ShippingFormComponent,
+    OrderDetailsComponent,
+    AdminOrderDetailComponent,
+    OrderDetailsDisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -98,7 +104,10 @@ import { ShippingFormComponent } from './shipping-form/shipping-form.component';
         {path: 'my/orders', component: MyordersComponent, canActivate: [AuthGuardService]},
         {path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService]},
         {path: 'admin/products/:id', component: ProductFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService]},
-        {path: 'admin/products', component: AdminProductsComponent , canActivate: [AuthGuardService, AdminAuthGuardService]}
+        {path: 'admin/products', component: AdminProductsComponent , canActivate: [AuthGuardService, AdminAuthGuardService]},
+        {path: 'my/order-details/:id', component: OrderDetailsComponent , canActivate: [AuthGuardService]},
+        {path: 'admin/order-details/:id', component: AdminOrderDetailComponent , canActivate: [AuthGuardService, AdminAuthGuardService]}
+
       ]
     )
   ],

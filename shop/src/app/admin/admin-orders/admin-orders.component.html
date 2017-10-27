@@ -1,3 +1,32 @@
-<p>
-  admin-orders works!
-</p>
+<div style="margin-top:20px" class="container" *ngIf="orders$ | async as orders " >
+    <h1> Orders </h1>
+   
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Customer</th>
+          <th style="width: 230px">Date</th>
+          <th class="text-right" style="width: 200px" ></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders" >
+          <td></td>
+          <td> {{ order.shipping.name }}</td>
+          <td> {{ order.datePlaced | date }}</td>
+          <td class="text-right"><a [routerLink]="['/admin/order-details/',order.$key ]">view</a></td>
+          
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <!-- <th class="text-right">{{ cart.totalPrice | currency:'USD':true  }}</th> -->
+        </tr>
+      </tfoot>
+    </table>
+    <!-- <a routerLink="/checkout" *ngIf="cart.items.length" class="btn btn-primary">Check Out</a> -->
+</div>

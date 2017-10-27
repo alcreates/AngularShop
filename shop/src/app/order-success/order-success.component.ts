@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-success.component.css']
 })
 export class OrderSuccessComponent implements OnInit {
-
   constructor() { }
 
-  ngOnInit() {
+   ngOnInit() {
+
   }
 
 }
