@@ -1,0 +1,29 @@
+<form class="shippingForm-container" #f="ngForm" (ngSubmit)="placeOrder(f.value)" >
+    <mat-form-field>
+      <input id=""  ngModel #name="ngModel"  name="name" matInput required placeholder="Name">
+        <mat-error  *ngIf="name.touched && name.invalid" >
+          <mat-error *ngIf="name.errors.required">Name is required</mat-error>      
+        </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input id="" ngModel #address="ngModel" required  name="address" matInput placeholder="Address" >
+     
+      <mat-error  *ngIf="address.touched && address.invalid" >
+        <mat-error *ngIf="address.errors.required">Price is required</mat-error>         
+      </mat-error>
+    </mat-form-field>
+
+    
+    <mat-form-field>
+        <input id="" ngModel #city="ngModel" required  name="city" required matInput placeholder="city" >
+        
+        <mat-error  *ngIf="city.touched && city.invalid" >
+           <mat-error *ngIf="city.errors.required">Price is required</mat-error>         
+        </mat-error>       
+    </mat-form-field>
+
+
+    <button mat-raised-button color="accent" >Place Order</button>
+  </form>
+

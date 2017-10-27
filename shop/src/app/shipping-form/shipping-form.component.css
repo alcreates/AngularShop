@@ -1,0 +1,12 @@
+.shippingForm-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.shippingForm-container .mat-form-field {
+    width: 100%;
+}
+
+.shippingForm-container button {
+    width: 200px;
+}
