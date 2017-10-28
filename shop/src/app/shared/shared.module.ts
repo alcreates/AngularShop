@@ -1,3 +1,7 @@
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { DataTableModule } from 'angular-4-data-table/dist';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -12,7 +16,7 @@ import { ProductService } from './services/product.service';
 import { ShoppingCartService } from './services/shopping-cart.service';
 import { UserService } from './services/user.service';
 
-import { MatFormFieldModule, MatListModule, MatTableModule, MatButtonModule, MatToolbarModule } from '@angular/material';
+import { MatFormFieldModule, MatListModule, MatTableModule, MatButtonModule, MatToolbarModule, MatChipsModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
 
@@ -23,7 +27,9 @@ import { OrderDetailsComponent } from 'shared/components/order-details/order-det
 
 @NgModule({
   imports: [
+    FormsModule,
     CommonModule,
+    DataTableModule,
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
@@ -33,6 +39,9 @@ import { OrderDetailsComponent } from 'shared/components/order-details/order-det
     MatToolbarModule,
     MatMenuModule,
     MatSelectModule,
+    MatChipsModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     RouterModule.forChild([
       {path: 'my/order-details/:id', component: OrderDetailsComponent , canActivate: [AuthGuardService]}
 
@@ -49,7 +58,22 @@ import { OrderDetailsComponent } from 'shared/components/order-details/order-det
     ProductCardComponent,
     ProductQuantityComponent,
     OrderDetailsDisplayComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    FormsModule,
+    CommonModule,
+    DataTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatListModule,
+    MatTableModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatChipsModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   providers : [
     AuthService,

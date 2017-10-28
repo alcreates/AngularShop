@@ -1,3 +1,4 @@
+import { ShippingFormComponent } from './components/shipping-form/shipping-form.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +11,6 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ShoppingCartSummaryComponent } from './components/shopping-cart-summary/shopping-cart-summary.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ShippingFormComponent } from 'app/shipping/components/shipping-form/shipping-form.component';
 import { AuthGuardService } from 'shared/services/auth-guard.service';
 import {
   MatFormFieldModule,
@@ -28,18 +28,6 @@ import {
 @NgModule({
   imports: [
     SharedModule,
-    CommonModule,
-    FormsModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatInputModule,
-    MatCardModule,
-    MatTableModule,
-    MatListModule,
-    MatChipsModule,
     RouterModule.forChild([
       {path: 'products', component: ProductsComponent },
       {path: 'shoppingcart', component: ShoppingCartComponent},
