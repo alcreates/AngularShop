@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
 
-  <mat-menu #appMenu="matMenu">
+  <mat-menu style="z-index:99999" #appMenu="matMenu">
       <button mat-menu-item routerLink="/my/orders"> My Orders </button>
       <ng-container *ngIf="appUser">
             <button *ngIf="appUser.isAdmin" mat-menu-item routerLink="/admin/orders"> Manage Orders </button>
@@ -14,7 +14,7 @@
   <button mat-button routerLink="/shoppingcart" >
     Shopping Cart
   </button>
-     <mat-chip-list> 
+     <mat-chip-list style="margin-right: 10px;"> 
          <mat-chip *ngIf="cart$ | async as cart" color="accent" selected="true">
           {{ cart.totalItemsCount }}
         </mat-chip> 

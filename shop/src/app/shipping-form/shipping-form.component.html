@@ -24,6 +24,6 @@
     </mat-form-field>
 
 
-    <button mat-raised-button color="accent" >Place Order</button>
+    <button [disabled]="!f.valid" mat-raised-button color="accent" >Place Order</button>
   </form>
 

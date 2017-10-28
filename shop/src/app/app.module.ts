@@ -1,11 +1,11 @@
-import { OrderService } from './order.service';
-import { ShoppingCartService } from './shopping-cart.service';
-import { ProductService } from './product.service';
+import { OrderService } from './shared/services/order.service';
+import { ShoppingCartService } from './shared/services/shopping-cart.service';
+import { ProductService } from './shared/services/product.service';
 import { CategoryService } from './category.service';
 import { AdminAuthGuardService } from './admin-auth-guard.service';
-import { UserService } from './user.service';
-import { AuthGuardService } from './auth-guard.service';
-import { AuthService } from './auth.service';
+import { UserService } from './shared/services/user.service';
+import { AuthGuardService } from './shared/services/auth-guard.service';
+import { AuthService } from './shared/services/auth.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -25,6 +25,7 @@ import {MatCardModule} from '@angular/material';
 import { DataTableModule } from 'angular-4-data-table';
 import {MatListModule} from '@angular/material';
 import {MatChipsModule} from '@angular/material';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -72,6 +73,7 @@ import { OrderDetailsDisplayComponent } from './order-details-display/order-deta
     OrderDetailsComponent,
     AdminOrderDetailComponent,
     OrderDetailsDisplayComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -92,6 +94,7 @@ import { OrderDetailsDisplayComponent } from './order-details-display/order-deta
     MatTableModule,
     MatListModule,
     MatChipsModule,
+    NgbModule.forRoot(),
     RouterModule.forRoot(
       [
         {path: '', component: ProductsComponent},
