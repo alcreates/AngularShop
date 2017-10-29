@@ -6,5 +6,6 @@
 @media (max-width: 768px) {
     #productFilterContainer {
       position: static;
+      width: 100%;
     }
-  }
+}

@@ -2,7 +2,20 @@
     line-height: 4px;
 }
 #leadButton {
-    margin-left: 20px;
+    padding-left: 0px;
+}
+#leadButton i {
+    font-size: 20px;
+}
+#nameMenuContainer{
+    width:103px; 
+    margin-right: 0px
+}
+#nameMenuContainer button {
+    width:103px;
+}
+#shoppingCartIcon {
+    min-width:28px;
 }
 .fill-remaining-space {
    flex: 1 1 auto;
