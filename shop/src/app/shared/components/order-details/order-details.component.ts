@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 export class OrderDetailsComponent implements OnInit {
   id;
   items$;
-  constructor( private route: ActivatedRoute, private orderService:OrderService) {
+  constructor( private route: ActivatedRoute, private orderService: OrderService) {
 
   }
 

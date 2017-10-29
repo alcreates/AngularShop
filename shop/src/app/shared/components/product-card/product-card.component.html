@@ -1,9 +1,9 @@
-<mat-card  *ngIf="product.title" >
+<mat-card  *ngIf="product.title; else addNewProduct" >
     <mat-card-header>
       <div mat-card-avatar ></div>
       <mat-card-title>{{ product.title }}</mat-card-title>
     </mat-card-header>
-    <div *ngIf="product.imageUrl" [style.backgroundImage]="'url(' + product.imageUrl + ')'" class="itemImage" ></div>
+    <div *ngIf="product.imageUrl" class="itemImage" [style.backgroundImage]="'url(' + product.imageUrl + ')'" [style.height]="classItem ? '275px' : '400px' " ></div>
     <mat-card-content>
       <p>
       {{ product.price | currency:'USD':true }}
@@ -17,3 +17,7 @@
       
     </mat-card-actions>
   </mat-card>
+
+  <ng-template #addNewProduct >
+      <mat-card>Add New Product</mat-card>
+  </ng-template>

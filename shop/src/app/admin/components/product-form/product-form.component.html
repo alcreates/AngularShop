@@ -1,6 +1,8 @@
-<div class="container">
+<div class="container" id="productPage-container" >
+  <!-- used ng2-validation https://github.com/yuyang041060120/ng2-validation -->
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <!-- Todo: make form component -->
         <form class="productForm-container" #f="ngForm" (ngSubmit)="save(f.value)" >
             <mat-form-field>
               <input id="title" [(ngModel)]="product.title" #title="ngModel" name="title" matInput placeholder="Title">
@@ -38,13 +40,13 @@
               </mat-error>
             </mat-form-field>
       
-          <button mat-raised-button color="accent" >Save</button>
-          <button type="button" (click)="delete()" mat-raised-button color="" >Delete</button>
+          <button style="margin-bottom:10px" mat-raised-button color="primary" >Save</button>
+          <button type="button" (click)="delete()" mat-raised-button color="accent" >Delete</button>
           </form>
 
     </div>
-    <div class="col-md-6">
-        <product-card [product]="product" [show-actions]="false"></product-card>
+    <div style="margin-top:20px;" class="col-lg-6 col-md-12 col-sm-12">
+        <product-card [product]="product" [classItem]="false" [show-actions]="false"></product-card>
     </div>
   </div>
 </div>

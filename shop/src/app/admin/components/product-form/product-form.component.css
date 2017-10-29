@@ -4,12 +4,19 @@
     
   }
   
-  .productForm-container > * {
+.productForm-container > * {
     width: 400px;
     align-self: auto;
-  }
+}
 
-  .productPage {
-      display: flex;
-      justify-content: center;
-  }
+#productPage-container {
+      margin-top: 100px;
+}
+
+
+@media (max-width: 768px) {
+  .productForm-container > * {
+    width: 100%;
+    align-self: auto;
+}
+}

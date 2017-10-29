@@ -16,6 +16,8 @@ export class ProductCardComponent {
   // tslint:disable-next-line:no-input-rename
   @Input('shopping-cart') shoppingCart: ShoppingCart;
 
+  @Input('classItem') classItem = true;
+
 
   constructor(private cartService: ShoppingCartService) { }
 
