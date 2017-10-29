@@ -3,7 +3,7 @@
       <div mat-card-avatar ></div>
       <mat-card-title>{{ product.title }}</mat-card-title>
     </mat-card-header>
-    <div *ngIf="product.imageUrl" class="itemImage" [style.backgroundImage]="'url(' + product.imageUrl + ')'" [style.height]="classItem ? '275px' : '400px' " ></div>
+    <div *ngIf="product.imageUrl" class="itemImage" [style.backgroundImage]="'url(' + product.imageUrl + ')'" [style.height]="inProductPage ? '275px' : '400px' " ></div>
     <mat-card-content>
       <p>
       {{ product.price | currency:'USD':true }}
@@ -12,7 +12,7 @@
     <mat-card-actions *ngIf="showActions && shoppingCart" >
       <button *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity " mat-button (click)="addToCart()">Add to Cart</button>
       <ng-template #updateQuantity>
-        <product-quantity [product]="product" [shopping-cart]="shoppingCart" ></product-quantity>
+        <product-quantity [product]="product" [inProductPage] = "inProductPage" [shopping-cart]="shoppingCart" ></product-quantity>
       </ng-template>
       
     </mat-card-actions>

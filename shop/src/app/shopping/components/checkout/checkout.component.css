@@ -1,3 +1,11 @@
 .shipping-page{
     margin-top: 20px;
 }
+
+@media (max-width: 768px) {
+    
+    .addTopMargin {
+        margin-top: 30px;
+    }    
+
+}

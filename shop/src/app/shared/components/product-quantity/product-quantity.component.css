@@ -1,0 +1,11 @@
+
+@media (max-width: 768px) {
+    
+    .mobileQuantityButton {
+        margin-top:50px;
+        width: 34px;
+    }
+    .hideText {
+        display:none;
+    }
+}

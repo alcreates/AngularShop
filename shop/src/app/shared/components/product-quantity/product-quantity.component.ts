@@ -13,6 +13,8 @@ export class ProductQuantityComponent {
   // tslint:disable-next-line:no-input-rename
   @Input('shopping-cart') shoppingCart;
 
+  @Input('inProductPage') inProductPage;
+
 
   constructor(private cartService: ShoppingCartService) { }
 
