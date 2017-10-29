@@ -1,7 +1,9 @@
 .mat-chip {
     line-height: 4px;
 }
-
+#leadButton {
+    margin-left: 20px;
+}
 .fill-remaining-space {
    flex: 1 1 auto;
 }

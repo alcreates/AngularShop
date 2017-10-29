@@ -3,15 +3,36 @@
   <span id="leadButton" routerLink="/" mat-button>
     <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
   </span>
-  <button style="margin-left: 10px;" *ngIf="appUser; else otherUser" mat-icon-button [matMenuTriggerFor]="appMenu">
-    <mat-icon>{{ appUser.name }}</mat-icon>
-  </button>
+  
 
   <ng-template #otherUser>
     <button mat-button routerLink="/login">Login</button>
   </ng-template>
 
-  <mat-menu style="z-index:99999" #appMenu="matMenu">
+  
+  
+  <span class="fill-remaining-space"></span>
+  <span style="width:50px; margin-right: 80px">
+      <button style="" *ngIf="appUser; else otherUser" mat-icon-button [matMenuTriggerFor]="appMenu">
+        <span>{{ appUser.name }}</span>
+      </button>
+  </span>
+
+  <span style="padding: 0 10px;" mat-button routerLink="/shoppingcart">
+    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+  </span>
+
+  <mat-chip-list style="margin-right:20px">
+      <mat-chip *ngIf="cart$ | async as cart" color="accent" selected="true">
+        {{ cart.totalItemsCount }}
+      </mat-chip>
+    </mat-chip-list>
+
+
+</mat-toolbar>
+
+
+<mat-menu style="z-index:99999" #appMenu="matMenu">
     <button mat-menu-item routerLink="/my/orders"> My Orders </button>
     <ng-container *ngIf="appUser">
       <button *ngIf="appUser.isAdmin" mat-menu-item routerLink="/admin/orders"> Manage Orders </button>
@@ -21,18 +42,3 @@
     <button mat-menu-item routerLink="/" (click)="logout()"> Log Out </button>
 
   </mat-menu>
-
-
-  <span class="fill-remaining-space"></span>
-
-
-  <span style="padding: 0 10px;" mat-button routerLink="/shoppingcart">
-    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-  </span>
-  <mat-chip-list style="margin-right:20px">
-    <mat-chip *ngIf="cart$ | async as cart" color="accent" selected="true">
-      {{ cart.totalItemsCount }}
-    </mat-chip>
-  </mat-chip-list>
-
-</mat-toolbar>
