@@ -3,7 +3,7 @@
         <button [class.mobileQuantityButton] ="!inProductPage" (click)="removeFromCart()" class="btn btn-secondary btn-block">-</button>
     </div>
     <div  class="col text-center">
-        {{ shoppingCart.getQuantity(product) }} <span [class.hideText]="!inProductPage" >in cart</span> 
+        <span [class.quantity]="!inProductPage">{{ shoppingCart.getQuantity(product) }}</span> <span [class.hideText]="!inProductPage" >in cart</span> 
     </div>
     <div class="col-2">
         <button [class.mobileQuantityButton] ="!inProductPage" (click)="addToCart()" class="btn btn-secondary btn-block">+</button>

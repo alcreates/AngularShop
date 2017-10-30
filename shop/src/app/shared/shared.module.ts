@@ -1,6 +1,7 @@
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { DataTableModule } from 'angular-4-data-table/dist';
+import { DataTableModule } from 'angular-4-data-table/src/index';
+
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';

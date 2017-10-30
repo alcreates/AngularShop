@@ -7,7 +7,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { CustomFormsModule } from 'ng2-validation';
 
 import { environment } from './../environments/environment';
 import { AdminModule } from './admin/admin.module';
@@ -29,7 +28,6 @@ import { ShoppingModule } from './shopping/shopping.module';
     BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    CustomFormsModule,
     SharedModule,
     AdminModule,
     CoreModule,

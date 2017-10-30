@@ -1,4 +1,4 @@
-<div style="margin-top:20px" class="container" >
+<div class="container">
     <h1> Order Detail </h1>
   
     <table class="table">
@@ -7,7 +7,8 @@
           <th></th>
           <th>Product</th>
           <th>Quantity</th>
-          <th class="text-right" >Price</th>
+          <th  >Price</th>
+          <!-- class="text-right" -->
         </tr>
       </thead>
       <tbody>
@@ -15,7 +16,8 @@
           <td><div [style.backgroundImage]="'url(' + item.product.imageUrl + ')'" class="thumbnail" ></div></td>
           <td> {{ item.product.title }}</td>
           <td> {{ item.quantity }}</td>
-          <td class="text-right"> {{ item.totalPrice | currency:'USD':true  }}</td>
+          <td > {{ item.totalPrice | currency:'USD':true  }}</td>
+          <!-- class="text-right" -->
         </tr>
       </tbody>
       <tfoot>
@@ -28,4 +30,5 @@
       </tfoot>
     </table>
 
-</div>
+  </div>
+

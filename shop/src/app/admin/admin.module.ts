@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
+import { DataTableModule } from 'angular-4-data-table/src/index';
 import { RouterModule } from '@angular/router';
 import { AdminAuthGuardService } from 'app/admin/services/admin-auth-guard.service';
 import { AuthGuardService } from 'shared/services/auth-guard.service';
+import { CustomFormsModule } from 'ng2-validation';
 
 import { SharedModule } from './../shared/shared.module';
 import { AdminOrderDetailComponent } from './components/admin-order-detail/admin-order-detail.component';
@@ -12,6 +14,8 @@ import { ProductFormComponent } from './components/product-form/product-form.com
 @NgModule({
   imports: [
     SharedModule,
+    CustomFormsModule,
+    DataTableModule,
     RouterModule.forChild(
       [
 

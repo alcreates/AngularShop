@@ -30,5 +30,6 @@
         </tr>
       </tfoot>
     </table>
-    <a routerLink="/checkout" *ngIf="cart.items.length" class="btn btn-primary">Check Out</a>
+    <button mat-raised-button *ngIf="cart.items.length" routerLink="/checkout" color="accent">checkout</button>                  
+    
 </div>
